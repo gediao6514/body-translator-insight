@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "regions": ["sin1"],
+  "functions": {
+    "api/**/*": {
+      "runtime": "nodejs18.x",
+      "memory": 1024,
+      "maxDuration": 15
+    }
+  }
+}
