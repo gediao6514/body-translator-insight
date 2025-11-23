@@ -9,16 +9,18 @@
     "seed": "ts-node scripts/seed.ts"
   },
   "dependencies": {
+    "@google/generative-ai": "latest",
+    "@upstash/ratelimit": "^2.0.7",
+    "@upstash/redis": "^1.35.6",
+    "mongodb": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "@google/generative-ai": "latest",
-    "mongodb": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
-    "ts-node": "latest"
+    "ts-node": "latest",
+    "typescript": "latest"
   }
 }

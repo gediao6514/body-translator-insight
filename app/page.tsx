@@ -1,5 +1,6 @@
 'use client'
 import { useActionState } from 'react'
+import { useEffect } from 'react'
 
 async function submit(_: any, formData: FormData) {
   const question = String(formData.get('question') || '')
@@ -21,6 +22,15 @@ async function submit(_: any, formData: FormData) {
 
 export default function Page() {
   const [state, action, isPending] = useActionState(submit, { result: '', sources: [] })
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      if (params.size > 0) {
+        const payload = Object.fromEntries(params.entries())
+        fetch('/api/utm', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      }
+    } catch {}
+  }, [])
   return (
     <div className="container">
       <div className="title">身体翻译官</div>
